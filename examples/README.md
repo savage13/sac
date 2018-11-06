@@ -1,4 +1,4 @@
-Seismic Analysis Code Example Programs
+# Seismic Analysis Code Example Programs
 
 What follows is a collection of programs that use various portions of the
 sacio and sac libraries included with this distribution.  The source code
