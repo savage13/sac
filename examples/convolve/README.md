@@ -1,3 +1,6 @@
+# Convolve Example
+
+
 This file is ${SACHOME}/doc/exmples/convolve/README
 
 In that directory, issue the command
