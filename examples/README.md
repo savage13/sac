@@ -11,55 +11,55 @@ sac-config helper program to get the location and name of libraries along
 with required compile flags.
 
 Programs include:
-  * Get SAC Header Variables
-      - gethvc.c
-      - gethvf.f
+  * Get SAC Header Variables 
+      - [gethvc.c](./io/gethvc.c)
+      - [gethvf.f](./io/gethvf.f)
   * Read a Evenly Spaced SAC file
-      - rsac1c.c
-      - rsac1f.f
+      - [rsac1c.c](./io/rsac1c.c)
+      - [rsac1f.f](./io/rsac1f.f)
   * Read an Un-Evenly Spaced SAC file
-      - rsac2c.c
-      - rsac2f.f
+      - [rsac2c.c](./io/rsac2c.c)
+      - [rsac2f.f](./io/rsac2f.f)
   * Write a Evenly Spaced SAC file
-      - wsac1c.c
-      - wsac1f.f
+      - [wsac1c.c](./io/wsac1c.c)
+      - [wsac1f.f](./io/wsac1f.f)
   * Write a Un-Evenly Spaced SAC file
-      - wsac2c.c
-      - wsac2f.f
+      - [wsac2c.c](./io/wsac2c.c)
+      - [wsac2f.f](./io/wsac2f.f)
   * Write Another Evenly Spaced SAC file
-      - wsac3c.c
-      - wsac3f.f
+      - [wsac3c.c](./io/wsac3c.c)
+      - [wsac3f.f](./io/wasc3f.f)
   * Write a 2D SAC file
-      - wsac4c.c
-      - wsac4f.f
+      - [wsac4c.c](./io/wsac4c.c)
+      - [wsac4f.f](./io/wsac4f.f)
   * Write a collection of SAC files
-      - wsac5c.c
-      - wsac5f.f
+      - [wsac5c.c](./io/wsac5c.c)
+      - [wsac5f.f](./io/wsac5f.f)
   * Convolve Two SAC files [ Directory: convolve ]
       - Uses a time domain convolution
-      - convolvec.c
-      - convolvef.f
+      - [convolvec.c](./convolve/convolvec.c)
+      - [convolvef.f](./convolve/convolvef.f)
   * Convolve Two SAC files [ Directory: convolve_saclib ]
       - Uses frequency domain in saclib
-      - convolvec.c
-      - convolvef.f
+      - [convolvec.c](convolve_saclib/convolvec.c)
+      - [convolvef.f](convolve_saclib/convolvef.f)
   * Correlate Two SAC files [ Directory: correlate ]
-      - correlatec.c
-      - correlatef.f
+      - [correlatec.c](correlate/correlatec.c)
+      - [correlatef.f](correlate/correlatef.f)
   * Get the Envelope of a SAC file [ Directory: envelope ]
-      - envelopec.c
-      - envelopef.f
+      - [envelopec.c](envelope/envelopec.c)
+      - [envelopef.f](envelope/envelopef.f)
   * Interpolate a SAC file using cubic spline [ Directory: interpolate ]
       - External Command, not in SAC
-      - interpolate.f
-      - interpolate_subs.f
+      - [interpolate.f](interpolate/interpolate.f)
+      - [interpolate_subs.f](interpolate/interpolate_subs.f)
   * Filter a SAC file [ Directory: filter ]
-      - filterc.c
-      - filterf.f
+      - [filterc.c](./filter/filterc.c)
+      - [filterf.f](./filter/filterf.f)
   * Time Shift a SAC file [ Directory: time_shift ]
       - External Command, not in SAC
-      - time_shift.f
-      - time_shift_subs.f
+      - [time_shift.f](./time_shift/time_shift.f)
+      - [time_shift_subs.f](./time_shift/time_shift_subs.f)
   * create_input.sh
       Run SAC to create SAC files that are then 
       compared to the output from each standalone program.
