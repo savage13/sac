@@ -18,7 +18,7 @@ Downloadable source code and binary distributions are not available here, sadly.
   - [remove_polezero](doc.md#Instrument-Removal-and-Deconvolution) - Remove an instrument response stored in a polezero file
   - [remove_mean](doc.md#Remove-Mean) - Remove the mean from data
   - [remove_trend](doc.md#Remove-Trend) - Remove the trend from data
-  - [rtrend2](doc.md#Remove-Trend---Uneven-data) - Remove the trend from unevely spaced data
+  - [rtrend2](doc.md#remove-trend---unevenly-sampled-data) - Remove the trend from unevely spaced data
   - [rotate](doc.md#Rotate) - Perform a clockwise rotation of a pair of signals.
   - [bandpass](doc.md#Filtering) - Filter data using a band-pass filter
   - [lowpass](doc.md#Filtering) - Filter data using a low-pass filter
@@ -37,5 +37,5 @@ Downloadable source code and binary distributions are not available here, sadly.
   - [taper_seconds](doc.md#Taper) - Taper using a duration in seconds
   - [taper_width](doc.md#Taper) - Taper using a percentage of the data
   - [cut](doc.md#Cut-Data) - Cut a time series data using a begin and end time
-  - [convolve](doc.md#Convolve) - Convolve two time series together
+  - [convolve](doc.md#Convolution) - Convolve two time series together
 
