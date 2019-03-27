@@ -179,17 +179,17 @@ where y is the data
 **Examples**
 
 ```c
-    #define NMAX 1969
+#define NMAX 1969
 
-    float y[NMAX], b, dt;
-    int nmax = NMAX;
-    int n, nerr;
+float y[NMAX], b, dt;
+int nmax = NMAX;
+int n, nerr;
 
-    // Read in the data file
-    rsac1("raw.sac", y, &n, &b, &dt, &nmax, &nerr, -1);
+// Read in the data file
+rsac1("raw.sac", y, &n, &b, &dt, &nmax, &nerr, -1);
 
-    // Remove the trend of the data in place
-    remove_trend(y, n, dt, b);
+// Remove the trend of the data in place
+remove_trend(y, n, dt, b);
 ```
 
 **Effective SAC Commands**
@@ -467,7 +467,7 @@ Find the maximum of a correlation
 ---------------------------------------------------
 
 ```c
-    float correlate_time(float dt, float b, int i)
+float correlate_time(float dt, float b, int i)
 ```
 
 Compute the time of a data point given dt and begin time
@@ -483,7 +483,7 @@ Compute the time of a data point given dt and begin time
 ---------------------------------------------------
 
 ```c
-    float * correlate_time_array(float dt, float b, int n)
+float * correlate_time_array(float dt, float b, int n)
 ```
 
 Compute a time array given dt and begin time
@@ -499,7 +499,7 @@ Compute a time array given dt and begin time
 ***************************************************
 
 ```c
-    float correlate_time_begin(float dt, float n1, float _n2, float b1, float b2)
+float correlate_time_begin(float dt, float n1, float _n2, float b1, float b2)
 ```
 
 Compute begin time from a corealtion of two time series
@@ -614,8 +614,8 @@ SAC> read raw.sac
 SAC> dif
 ```
 
-Integerate
-----------
+Integrate
+---------
 
 ```c
 void int_trap(float *y, int n, double delta)
