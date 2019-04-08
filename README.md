@@ -5,7 +5,7 @@ Seismic Analysis Code (SAC) is a general purpose waveform analysis and processin
 Information on [Downloading SAC](https://ds.iris.edu/ds/nodes/dmc/forms/sac/) and the [official SAC Documentation](https://ds.iris.edu/files/sac-manual/manual.html) is available directly from [IRIS](https://www.iris.edu/hq/), who coordinates releases due to licensing restrictions.
 
 ## Contents
-[Examples Code](./examples/) using the sacio reading/writing library and the sac function library.  These routines *might* require the libraries distributed with SAC.
+[Examples Code](./examples/) using the sacio reading/writing library and the sac function library.  These routines **require** the libraries distributed with SAC.
 
 
 ## What is Not Here
