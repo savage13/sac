@@ -401,9 +401,8 @@ Compute the cross-correlation of two signals
 
 **Return:** Cross correlation function, length: nf + ng - 1
 
-If the signals are not the same length, then find the longest
-signal, make both signals that length by filling the remainder
-with zeros (pad at the end) and then run them through crscor
+If the signals are not the same length, pad the shorter-length 
+signal with zeros to the same length as the longer-length signal
 
 **Examples**
 
