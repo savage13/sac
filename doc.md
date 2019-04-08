@@ -772,49 +772,4 @@ Cut a time series data using a begin and end time
     SAC> read raw.sac
 ```
 
-Convolution
------------
 
-```c
-void convolve(float *a, int na, float *b, int nb, float *c, int nc)
-```
-
-Convolve two time series together
-
-**Arguments**
-
-- `a` - First time series
-- `na` - Length of a
-- `b` - Second time series
-- `nb` - Length of b
-- `c` - Output convolution of a and b, must be at least na+nb-a length
-- `nc` - Length of c, must be at least na+nb-1
-
-**Examples**
-
-```c
-#define NMAX 2020
-int na, nb, nerr, max, n;
-float beg, delta, ya[NMAX], yb[NMAX], yc[2*NMAX];
-
-max = NMAX;
-// Read in the first file
-rsac1("data.sac", ya, &na, &beg, &delta, &max, &nerr, SAC_STRING_LENGTH);
-
-// Read in the second file
-rsac1("triangle.sac", yb, &nb, &beg, &delta, &max, &nerr, SAC_STRING_LENGTH);
-
-// Convolve the two time series
-convolve(ya, na, yb, nb, yc, na+nb-1);
-```
-
-**Effective SAC Commands**
-
-```shell
-SAC> fg triangle delta 1e-2 npts 100
-SAC> write triangle.sac
-SAC> fg seismo
-SAC> write data.sac
-SAC> read data.sac triangle.sac
-SAC> convolve
-```
