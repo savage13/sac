@@ -13,6 +13,7 @@ For exhustive examples, please see doc/examples contained in the SAC distributio
 Contents
 ========
 - [Instrument Removal Deconvolution](doc.md#Instrument-Removal-and-Deconvolution)
+- [FFT](doc.md#FFT)
 - [Remove Mean](doc.md#Remove-Mean)
 - [Remove Trend](doc.md#Remove-Trend)
 - [Remove Trend - Uneven data](doc.md#Remove-Trend---Unevenly-sampled-data)
@@ -108,6 +109,96 @@ Remove an evalresp or polezero specified instrument response.  Best to use the `
 ```shell
 SAC> read raw.sac
 SAC> transfer from evalresp to none freq 0.002 0.005 12 20
+```
+
+FFT
+---
+
+```c
+// Single Precision, Real and Complex
+
+// Forward Real/Imaginary, Single precision
+void fft(float *data, int n, float *re, float *im, int *nf);
+// Forward Complex, Single precision
+void fftz(float *data, int n, float complex *z, int *nf);
+
+// Inverse Real/Imaginary, Single precision
+void ifft(float *data, int n, float *re, float *im, int nf);
+// Inverse Complex, Single precision
+void ifftz(float *data, int n, float complex *z, int nf);
+
+// Double Precision
+
+// Forward Real/Imginary, Double precision
+void dfft(double *data, int n, double *re, double *im, int *nf);
+// Forward Complex, Double precision
+void dfftz(double *data, int n, double complex *z, int *nf);
+
+// Inverse Real/Imaginary, Double precision
+void idfft(double *data, int n, double *re, double *im, int nf);
+// Inverse Complex, Double precision
+void idfftz(double *data, int n, double complex *z, int nf);
+```
+
+Compute the Forward and Inverse Fourier Transforms of a signal.  
+
+**Arguments - Forward Transforms**
+- `data` - Input time series signal
+- `n`  - Input Length of `data`
+- `re` - Output Real-part of the Fourier Spectrum
+- `im` - Output Imaginary-part of the Fourier spectrum
+- `z`  - Output complex Fourier Spectrum
+- `nf` - Input / Output Number of Points for the Fourier spectrum
+
+Output spectrum variables (`re`, `im` and `z`) 
+must be sufficiently large on Input, 
+>= to the next power of 2 larger than `n`, and `nf` 
+must be set to the length of `re`, `im` and `z`.
+
+**Arguments - Inverse Transforms**
+- `data` - Output time series signal
+- `n`  - Output Length of `data` to keep
+- `re` - Input Real-part of the Fourier Spectrum
+- `im` - Input Imaginary-part of the Fourier spectrum
+- `z`  - Input complex Fourier Spectrum
+- `nf` - Input Number of Points for the Fourier spectrum
+
+Output time series variable, `data`, and associated length `n`, can be any size, but lengths `n` < `nf` will 
+only return the first `n` values.  If `n` > `nf`, values > `nf` will be unaltered.
+
+**Note**: Single precision functions automatically promote values to double precision for computation and back to single 
+precision for output.
+
+**Examples**
+
+```fortran
+  implicit none
+
+  integer i, n, nf
+  real*4 :: data(16),data2(16)
+  real*8 :: pi
+  real*4 :: re(16), im(16)
+
+  n = 16
+  pi = acos(-1.0d0);
+  ! Sine wave - Input
+  do i = 1,n
+     data(i) = sin( (i-1) * 2.0 * pi / (n / 2.0))
+  enddo
+
+  ! FFT
+  call fft(data, n, re, im, nf)
+  call ifft(data2, n, re, im, nf)
+
+```
+
+**Effective SAC Commands**
+
+```shell
+SAC> fg sine (1/8) 0 npts 16 delta 1.0
+SAC> write sin.sac
+SAC> fft
+SAC> write sin_fft.sac
 ```
 
 Remove Mean
