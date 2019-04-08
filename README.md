@@ -12,6 +12,7 @@ Information on [Downloading SAC](https://ds.iris.edu/ds/nodes/dmc/forms/sac/) an
 Downloadable source code and binary distributions are not available here, sadly.  Please [Request](https://ds.iris.edu/ds/nodes/dmc/forms/sac/) those directly from [IRIS](https://www.iris.edu/hq/).
 
 ## Functions (libsac)
+  - [FFT](doc.md#FFT) - Compute the forward and inverse Fourier Transfrom
   - [remove_evalresp_simple](doc.md#Instrument-Removal-and-Deconvolution) - Remove an instrument response stored in an evalresp file
   - [remove_evalresp](doc.md#Instrument-Removal-and-Deconvolution) - Remove an instrument response stored in an evalresp file
   - [remove_polezero_simple](doc.md#Instrument-Removal-and-Deconvolution) - Remove an instrument response stored in a polezero file
