@@ -37,5 +37,4 @@ Downloadable source code and binary distributions are not available here, sadly.
   - [taper_seconds](doc.md#Taper) - Taper using a duration in seconds
   - [taper_width](doc.md#Taper) - Taper using a percentage of the data
   - [cut](doc.md#Cut-Data) - Cut a time series data using a begin and end time
-  - [convolve](doc.md#Convolution) - Convolve two time series together
 
